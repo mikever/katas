@@ -1,5 +1,4 @@
-# pylint: disable=redefined-builtin
-# pylint: disable=missing-function-docstring
+# pylint: [disable=redefined-builtin, missing-function-docstring]
 """ Is a number prime
 
 Define a function that takes an integer argument and returns a logical value true or false
