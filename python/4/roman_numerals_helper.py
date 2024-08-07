@@ -41,7 +41,7 @@ class RomanNumerals:
 
     @staticmethod
     def to_roman(val: int) -> str:
-        """Construct lists of strings for each decimal place, adn then concat result string"""
+        """lists of strings for decimal place; floor division; concat result string"""
         m = ["", "M", "MM", "MMM"]
         c = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
         x = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
@@ -56,7 +56,7 @@ class RomanNumerals:
 
     @staticmethod
     def from_roman(roman_num: str) -> int:
-        """Iterate string by two first, to match against dict entry, or else by one, and add to `num`"""
+        """Iterate, jump by two or one, depending on the numeral on the dict; add to number depending on value of letter"""
         roman = {
             "I": 1,
             "V": 5,
