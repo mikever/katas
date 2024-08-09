@@ -38,15 +38,31 @@ Or should I say "girls" ;)? Agata, Ania Dina and (although definitely not one of
 special mention to NaN
 """
 
+# pylint: disable=global-variable-not-assigned
+
 primes = [2, 3, 5, 7]
+primes_set = set(primes)
 
 
 def is_prime(n):
-    """here"""
-    if n > 1:
-        for i in range(2, (n // 2) + 1):
-            if (n % i) == 0:
-                return False
-        return True
+    """Uses memoization"""
+    global primes_set
 
-    return False
+    if n <= primes[-1]:
+        return n > 1 and n in primes_set
+    limit = int(n**0.5)
+    for x in primes:
+        if x > limit:
+            break
+        if not n % x:
+            return False
+
+    x, delta = primes[-1], 4 if primes[-1] % 6 == 1 else 2
+    while x <= limit:
+        x, delta = x + delta, 6 - delta
+        if is_prime(x):
+            primes.append(x)
+            primes_set.add(x)
+            if not n % x:
+                return False
+    return True
