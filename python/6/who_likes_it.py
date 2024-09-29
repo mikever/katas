@@ -49,6 +49,7 @@ def likes2(names):
     }[min(4, n)].format(*names[:3], others=n - 2)
 
 
+# TESTS
 print(likes([]))
 print(likes(["Tom"]))
 print(likes(["Tom", "Bob"]))
