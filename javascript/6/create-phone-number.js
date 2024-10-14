@@ -11,7 +11,7 @@ function createPhoneNumber(numbers) {
   return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
 }
 
-// Create the format first, and then iterate the array and replace 'x' with the value
+// Create the format first, and then iterate the array and replace 'x' with the value; more readable
 function createPhoneNumber2(numbers) {
   let format = '(xxx) xxx-xxxx'
 
@@ -21,3 +21,5 @@ function createPhoneNumber2(numbers) {
 
   return format
 }
+
+console.log(createPhoneNumber([3, 5, 2, 5, 5, 5, 4, 8, 4, 8]))
