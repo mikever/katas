@@ -12,6 +12,9 @@
  *   "ABBA" -> 2 # 'A' and 'B' each occur twice
  */
 
+const path = require('path')
+const filename = path.basename(__filename)
+
 function duplicateCount(text) {
   const cache = {}
   let count = 0
@@ -46,6 +49,7 @@ function duplicateCount2(text) {
   ).length
 }
 
+console.log(`Running: ${filename}`)
 console.log(duplicateCount(''))
 console.log(duplicateCount('aabbcde'))
 console.log('-----')
