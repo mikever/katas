@@ -44,7 +44,7 @@ function isValidWalk(walk) {
     : false
 }
 
-console.log(`Running: ${filename}`)
+console.log(`Running: ${filename}\n`)
 console.log('Answer:\ntrue false false false')
 console.log(
   isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']),
