@@ -25,5 +25,18 @@ function digitalRoot(num) {
   )
 }
 
+function digitalRoot2(num) {
+  if (num < 10) return num
+
+  return digitalRoot2(
+    num
+      .toString()
+      .split('')
+      .reduce((acc, curr) => acc + +curr, 0), // +curr casts string to number
+  )
+}
+
 console.log(digitalRoot(16) === 7)
 console.log(digitalRoot(456) === 6)
+console.log(digitalRoot2(16) === 7)
+console.log(digitalRoot2(456) === 6)
