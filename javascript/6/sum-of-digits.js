@@ -1,3 +1,6 @@
+const path = require('path')
+const filename = path.basename(__filename)
+
 /* Sum of Digits - Digital Root
  *
  * Digital root is the recursive sum of all the digits in a number.
@@ -32,11 +35,13 @@ function digitalRoot2(num) {
     num
       .toString()
       .split('')
-      .reduce((acc, curr) => acc + +curr, 0), // +curr casts string to number
+      .reduce((acc, curr) => acc + +curr, 0), // +string casts to number
   )
 }
 
+console.log(`Running: ${filename}`)
 console.log(digitalRoot(16) === 7)
 console.log(digitalRoot(456) === 6)
+console.log('-----')
 console.log(digitalRoot2(16) === 7)
 console.log(digitalRoot2(456) === 6)
